@@ -1,5 +1,5 @@
 {
-  "name": "leaflet-multilayer-feature-getter",
+  "name": "leaflet-WMS-layer-info",
   "version": "1.0.0",
   "homepage": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo",
   "authors": [
@@ -17,7 +17,8 @@
     "plugin"
   ],
   "dependencies": {
-    "leaflet": "^0.7.3"
+    "leaflet": "^0.7.3",
+    "leaflet-WMS-layer-info": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo.git"
   },
   "repository": {
     "type": "https",
