@@ -1,0 +1,45 @@
+{
+  "name": "leaflet-WMS-layer-info",
+  "version": "1.0.0",
+  "description": "A leaflet class to implement feature info for all visible layers in one single popup.",
+  "main": "dist/Leaflet.WMSLayerInfo.min.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo.git"
+  },
+  "keywords": [
+    "leaflet",
+    "class",
+    "layer",
+    "feature",
+    "plugin"
+  ],
+  "author": "Igor Castilheiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo/issues"
+  },
+  "homepage": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.8.0",
+    "load-grunt-tasks": "^3.1.0"
+  },
+  "dependencies": {
+    "leaflet": "^0.7.3"
+  },
+  "jspm": {
+    "registry": "jspm",
+    "shim": {
+      "dist/leaflet.custom-print.min": [
+        "leaflet"
+      ]
+    }
+  }
+}
