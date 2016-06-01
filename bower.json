@@ -1,5 +1,5 @@
 {
-  "name": "leaflet-WMS-layer-info",
+  "name": "leaflet-wms-layer-info",
   "version": "1.0.0",
   "homepage": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo",
   "authors": [
@@ -7,7 +7,7 @@
   ],
   "description": "A leaflet class to implement feature info for all visible layers in one single popup.",
   "main": [
-    "dist/Leaflet.WMSLayerInfo.min.js"
+    "dist/Leaflet.WMSLayerInfo.js"
   ],
   "keywords": [
     "leaflet",
@@ -17,8 +17,7 @@
     "plugin"
   ],
   "dependencies": {
-    "leaflet": "^0.7.3",
-    "leaflet-WMS-layer-info": "https://github.com/ibamacsr/Leaflet.WMSLayerInfo.git"
+    "leaflet": "^0.7.3"
   },
   "repository": {
     "type": "https",

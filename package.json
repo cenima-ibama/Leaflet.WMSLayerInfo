@@ -1,13 +1,10 @@
 {
-  "name": "leaflet-WMS-layer-info",
+  "name": "leaflet-wms-layer-info",
   "version": "1.0.0",
   "description": "A leaflet class to implement feature info for all visible layers in one single popup.",
-  "main": "dist/Leaflet.WMSLayerInfo.min.js",
+  "main": "dist/Leaflet.WMSLayerInfo.js",
   "directories": {
     "example": "example"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
