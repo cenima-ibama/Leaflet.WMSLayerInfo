@@ -25,7 +25,10 @@ WMSLayerInfo = L.Class.extend({
                         success: function (data) {
                             var err = typeof data === 'string' ? null : data;
                             var result = JSON.parse(data);
-                            result.title = layer.extras.title;
+                            if(layer.extras)
+                              result.title = layer.extras.title;
+                            else
+                              result.title = layer.options.layers;
                             showResults(err, evt.latlng, result);
                         },
                         error: function (xhr, status, error) {
