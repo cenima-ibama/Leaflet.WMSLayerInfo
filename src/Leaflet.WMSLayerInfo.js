@@ -72,20 +72,23 @@ WMSLayerInfo = L.Class.extend({
         } // do nothing if there's an error
         var html = '';
         if (content.features.length > 0) {
-            // html = '<h3>' + content.title + '</h3>';
-            // html += '<table class="table table-striped">';
+            if (this._popupFunction) {
+                html = '<h3>' + content.title + '</h3>';
+                html += '<table class="table table-striped">';
 
-            // for (var property in content.features[0].properties) {
-            //     html += '<tr>';
-            //     html += '<td><b>' + property + '</b></td>';
-            //     html += '<td>' + content.features[0].properties[property] + '</td>';
-            //     html += '</tr>';
+                for (var property in content.features[0].properties) {
+                    html += '<tr>';
+                    html += '<td><b>' + property + '</b></td>';
+                    html += '<td>' + content.features[0].properties[property] + '</td>';
+                    html += '</tr>';
 
-            // }
-            // html += '</table>';
+                }
+                html += '</table>';
 
-            // this._popupContent += html;
-            this._popupContent += this._popupFunction(content);
+                this._popupContent += html;
+            } else {
+                this._popupContent += this._popupFunction(content);   
+            }
 
             if (!this._hasPopup) {
                 L.popup({
