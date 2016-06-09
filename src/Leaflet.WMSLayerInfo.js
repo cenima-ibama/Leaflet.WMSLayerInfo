@@ -84,11 +84,11 @@ WMSLayerInfo = L.Class.extend({
 
                 }
                 html += '</table>';
-
-                this._popupContent += html;
             } else {
-                this._popupContent += this._popupFunction(content);   
+                html = this._popupFunction(content)
             }
+
+            this._popupContent += html;   
 
             if (!this._hasPopup) {
                 L.popup({
