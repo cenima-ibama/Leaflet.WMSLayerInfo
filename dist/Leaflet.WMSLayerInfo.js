@@ -3,10 +3,11 @@
  */
 WMSLayerInfo = L.Class.extend({
 
-    initialize: function (map) {
+    initialize: function (map, popupFunction) {
         // Triggered when the layer is added to a map.
         //   Register a click listener, then do all the upstream WMS things
         this._map = map;
+        this._popupFunction = popupFunction;
         this._map.on('click', this.getFeatureInfo, this);
     },
 
@@ -68,22 +69,26 @@ WMSLayerInfo = L.Class.extend({
         if (err) {
             console.log(err);
             return;
-        } // do nothing if there's an error
+        } // do nothing if there's an error 
         var html = '';
         if (content.features.length > 0) {
-            html = '<h3>' + content.title + '</h3>';
-            html += '<table class="table table-striped">';
+            if (!this._popupFunction) {
+                html = '<h3>' + content.title + '</h3>';
+                html += '<table class="table table-striped">';
 
-            for (var property in content.features[0].properties) {
-                html += '<tr>';
-                html += '<td><b>' + property + '</b></td>';
-                html += '<td>' + content.features[0].properties[property] + '</td>';
-                html += '</tr>';
+                for (var property in content.features[0].properties) {
+                    html += '<tr>';
+                    html += '<td><b>' + property + '</b></td>';
+                    html += '<td>' + content.features[0].properties[property] + '</td>';
+                    html += '</tr>';
 
+                }
+                html += '</table>';
+
+                this._popupContent += html;
+            } else {
+                this._popupContent += this._popupFunction(content);   
             }
-            html += '</table>';
-
-            this._popupContent += html;
 
             if (!this._hasPopup) {
                 L.popup({

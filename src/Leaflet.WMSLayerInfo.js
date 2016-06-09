@@ -69,7 +69,7 @@ WMSLayerInfo = L.Class.extend({
         if (err) {
             console.log(err);
             return;
-        } // do nothing if there's an error
+        } // do nothing if there's an error 
         var html = '';
         if (content.features.length > 0) {
             if (!this._popupFunction) {
