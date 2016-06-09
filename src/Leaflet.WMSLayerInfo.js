@@ -72,7 +72,7 @@ WMSLayerInfo = L.Class.extend({
         } // do nothing if there's an error
         var html = '';
         if (content.features.length > 0) {
-            if (this._popupFunction) {
+            if (!this._popupFunction) {
                 html = '<h3>' + content.title + '</h3>';
                 html += '<table class="table table-striped">';
 
