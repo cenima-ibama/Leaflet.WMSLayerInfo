@@ -59,6 +59,10 @@ WMSLayerInfo = L.Class.extend({
                 info_format: 'application/json'
             };
 
+        if (layer.wmsParams.hasOwnProperty('viewparams')) {
+            params.viewparams = layer.wmsParams.viewparams;
+        }
+
         params[params.version === '1.3.0' ? 'i' : 'x'] = point.x;
         params[params.version === '1.3.0' ? 'j' : 'y'] = point.y;
 
